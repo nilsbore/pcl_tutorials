@@ -23,7 +23,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 	this.userRotateSpeed = 1.0;
 
 	this.userPan = true;
-	this.userPanSpeed = 2.0;
+	this.userPanSpeed = 0.05;
 
 	this.autoRotate = false;
 	this.autoRotateSpeed = 2.0; // 30 seconds per round when fps is 60
@@ -222,7 +222,11 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 		event.preventDefault();
 
-		if ( event.button === 0 ) {
+		if ( event.button === 0 && event.shiftKey ) {
+
+			state = STATE.PAN;
+
+		} else if ( event.button === 0 ) {
 
 			state = STATE.ROTATE;
 

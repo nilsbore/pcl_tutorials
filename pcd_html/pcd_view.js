@@ -48,7 +48,7 @@ function init(text) {
     geometry.colors.push(new THREE.Color("rgb("+rgbView[2]+","+rgbView[1]+","+rgbView[0]+")"));
   }
   console.log("points loaded");
-  materials = new THREE.ParticleBasicMaterial( {size: .05, vertexColors: THREE.VertexColors} );
+  materials = new THREE.ParticleBasicMaterial( {size: .01, vertexColors: THREE.VertexColors} );
   particles = new THREE.ParticleSystem(geometry, materials);
   scene.add( particles );
 
